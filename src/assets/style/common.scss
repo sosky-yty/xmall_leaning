@@ -1,0 +1,51 @@
+.w{
+    widows: 1220px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr{
+    float: right;
+}
+
+.pr{
+    position: relative;
+}
+
+.pa{
+    position: absolute;
+}
+
+.active{
+    color: #c81623;
+}
+
+//:after 是在元素后方处理
+.clearfix:after{
+    content: '';    
+    display:block;
+    clear: both;
+    line-height: 0;
+    visibility: hidden;
+}
+
+.clearfix{
+    *zoom: 1;
+}
+
+.ellipsis{
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.del-btn{
+    display: block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background: url(/static/images/account-icon@2x.32d87deb02b3d1c3cc5bcff0c26314ac.png) -50px -60px no-repeat;
+}
