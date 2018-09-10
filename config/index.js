@@ -10,7 +10,14 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/member/*': {
+        target: 'http://127.0.0.1:8888'  // 请求本地 需要xmall后台项目 默认127.0.0.1:7777 
+      },
+      '/goods/*': {
+        target: 'http://127.0.0.1:8888'  // 请求本地 需要xmall后台项目 默认127.0.0.1:7777
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
