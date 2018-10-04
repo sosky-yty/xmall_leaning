@@ -11,12 +11,12 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
-  @import "assets/style/index.scss";
+@import "assets/style/index.scss";
 #app {
-  height: 100%
+  height: 100%;
 }
 
-.main{
+.main {
   background: #ededed;
 }
 </style>

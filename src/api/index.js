@@ -47,4 +47,3 @@ export const thank = (params) => {
 export const geetest = (params) => {
   return http.Get('/member/geetestInit?t=' + (new Date()).getTime(), params)
 }
-

@@ -5,7 +5,7 @@
                 <ul class="c0">
                     <h3 class="c1">订单服务</h3>
                     <ul>
-                        <li class="c2"><router-link to="/thanks"><a class="c3">购买指南</a></li>
+                        <li class="c2"><router-link to="/"><a class="c3">购买指南</a></router-link></li>
                         <li class="c2"> <a class="c3" @click="open3">支付方式</a></li>
                         <li class="c2"> <a class="c3" @click="open5">送货政策</a></li>
                     </ul>
@@ -25,197 +25,193 @@
 </template>
 
 <script>
-    import YButton from '/components/YButton'
+import YButton from '/components/YButton'
 export default {
-    data (){
-        return{
-
-        }
+  data () {
+    return {}
+  },
+  methods: {
+    open1 () {
+      this.$notify.info({
+        title: '法律声明',
+        message: '此库为个人模仿开源项目，作为学习用途'
+      })
     },
-    methods: {
-        open1(){
-            this.$notify.info({
-                title: '法律声明',
-                message: '此库为个人模仿开源项目，作为学习用途'
-            })
-        },
-        open2(){
-            this.$notify.info({
-                title: '隐私条款',
-                message : '本网站将不会严格遵守有关法律法规和本隐私政策所载明的内容收集、使用您的信息'
-            })
-        },
-        open3(){
-            this.$notify.info({
-                title: '支付方式',
-                message: '测试支付宝，微信付款'
-            })
-        },
-        open4(){
-            this.$notify.info({
-                title: '客服',
-                message: '客服功能在开发中．．．'
-            })
-        },
-        open5(){
-            this.$notify.info({
-                tilte: '送货政策',
-                message: '本网站的所有商品购买后不会发货',
-                type: 'warning'
-            })
-        }
+    open2 () {
+      this.$notify.info({
+        title: '隐私条款',
+        message:
+          '本网站将不会严格遵守有关法律法规和本隐私政策所载明的内容收集、使用您的信息'
+      })
     },
-    comments:{
-        YButton
+    open3 () {
+      this.$notify.info({
+        title: '支付方式',
+        message: '测试支付宝，微信付款'
+      })
+    },
+    open4 () {
+      this.$notify.info({
+        title: '客服',
+        message: '客服功能在开发中．．．'
+      })
+    },
+    open5 () {
+      this.$notify.info({
+        tilte: '送货政策',
+        message: '本网站的所有商品购买后不会发货',
+        type: 'warning'
+      })
     }
+  },
+  comments: {
+    YButton
+  }
 }
 </script>
 <style lang="scss" rel="stylesheet/scss" scoped>
- .footer {
-    padding: 50px 0 20px;
-    border-top: 1px solid #e6e6e6;
-    background: #fafafa;
-    margin-top: 60px;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.footer {
+  padding: 50px 0 20px;
+  border-top: 1px solid #e6e6e6;
+  background: #fafafa;
+  margin-top: 60px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .container {
-    width: 1220px;
-  }
-  
-  .siteinfo {
-    height: 100px;
-    padding: 50px 0 130px;
-    border-bottom: 1px solid #e6e6e6;
-    position: relative;
-  }
+.container {
+  width: 1220px;
+}
 
-  .c0 {
-    width: 149px;
-    line-height: 1;
-    float: left;
-  }
+.siteinfo {
+  height: 100px;
+  padding: 50px 0 130px;
+  border-bottom: 1px solid #e6e6e6;
+  position: relative;
+}
 
-  .c1 {
-    color: #646464;
-    font-size: 12px;
-    padding: 0 0 14px;
-  }
+.c0 {
+  width: 149px;
+  line-height: 1;
+  float: left;
+}
 
-  .c2 {
-    color: #c3c3c3;
-    font-size: 12px;
-    padding: 6px 0;
-  }
+.c1 {
+  color: #646464;
+  font-size: 12px;
+  padding: 0 0 14px;
+}
 
-  .c3 {
-    color: #969696;
-  }
+.c2 {
+  color: #c3c3c3;
+  font-size: 12px;
+  padding: 6px 0;
+}
 
-  .c4 {
-    position: absolute;
-    right: 0;
-    overflow: hidden;
-    line-height: 34px;
-  }
+.c3 {
+  color: #969696;
+}
 
-  .tel {
-    font-size: 30px;
-    line-height: 1;
-    color: #646464;
-    top: -2px;
-    position: relative;
-  }
+.c4 {
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+  line-height: 34px;
+}
 
-  .c5 {
-    color: #646464;
-    right: -70px;
-    position: relative;
-  }
+.tel {
+  font-size: 30px;
+  line-height: 1;
+  color: #646464;
+  top: -2px;
+  position: relative;
+}
 
-  .time {
-    margin-top: 5px;
-    right: -4px;
-    position: relative;
-    clear: both;
-    width: 241px;
-    font-size: 12px;
-    line-height: 18px;
-    color: #c3c3c3;
-    text-align: right;
-  }
+.c5 {
+  color: #646464;
+  right: -70px;
+  position: relative;
+}
 
-  .online {
-    clear: both;
-    width: 241px;
-    font-size: 12px;
-    line-height: 18px;
-    color: #c3c3c3;
-    text-align: right;
-  }
+.time {
+  margin-top: 5px;
+  right: -4px;
+  position: relative;
+  clear: both;
+  width: 241px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #c3c3c3;
+  text-align: right;
+}
 
-  .button {
-    width: 130px;
-    height: 34px;
-    font-size: 14px;
-    color: #5079d9;
-    border: 1px solid #dcdcdc;
-    margin-top: 8px;
-  }
+.online {
+  clear: both;
+  width: 241px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #c3c3c3;
+  text-align: right;
+}
 
-  .copyright {
-    color: #434d55;
-    font-size: 12px;
-    padding: 40px 0 0;
-    display: flex;
-    align-items: left;
-  }
+.button {
+  width: 130px;
+  height: 34px;
+  font-size: 14px;
+  color: #5079d9;
+  border: 1px solid #dcdcdc;
+  margin-top: 8px;
+}
 
-  .privacy {
-    float: left;
-    margin: 0 0 0 12px;
-  }
+.copyright {
+  color: #434d55;
+  font-size: 12px;
+  padding: 40px 0 0;
+  display: flex;
+  align-items: left;
+}
 
-  .content-c0 {
-    color: #5079d9;
-    cursor: pointer;
-    text-decoration: none;
-    &:hover {
-      color: #3A5FCD;
-    }
-  }
+.privacy {
+  float: left;
+  margin: 0 0 0 12px;
+}
 
-  .content-c1 {
-    float: left;
-    line-height: 12px;
-    padding: 1px 10px 0;
-    border-left: 1px solid #ccc;
+.content-c0 {
+  color: #5079d9;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    color: #3a5fcd;
   }
-  
-  .content-c2 {
-    float: left;
-    height: 15px;
-    line-height: 15px;
-    color: #757575;
-  }
+}
 
-  .cop {
-    clear: both;
-    padding: 10px 0 0;
-    height: 15px;
-  }
+.content-c1 {
+  float: left;
+  line-height: 12px;
+  padding: 1px 10px 0;
+  border-left: 1px solid #ccc;
+}
 
-  .content-c3 {
-    margin-right: 20px;
-    color: #bdbdbd;
-    font-size: 12px;
-    height: 12px;
-    line-height: 1;
-  }
+.content-c2 {
+  float: left;
+  height: 15px;
+  line-height: 15px;
+  color: #757575;
+}
 
+.cop {
+  clear: both;
+  padding: 10px 0 0;
+  height: 15px;
+}
+
+.content-c3 {
+  margin-right: 20px;
+  color: #bdbdbd;
+  font-size: 12px;
+  height: 12px;
+  line-height: 1;
+}
 </style>
-
-

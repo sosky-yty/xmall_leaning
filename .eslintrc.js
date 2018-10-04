@@ -24,6 +24,12 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    "requireStringLiterals": true,
+    "no-multiple-empty-lines": [0, {"max": 100}],
+    //关闭禁止混用tab和空格
+    "no-mixed-spaces-and-tabs": [0],
+    //关闭严格回调检查
+    "no-callback-literal": false
   }
 }
