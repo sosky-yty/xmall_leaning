@@ -10,7 +10,6 @@
                         <li class="c2"> <a class="c3" @click="open5">送货政策</a></li>
                     </ul>
                 </ul>
-
                 <div class="copyright">
                     <h4 class="content-c2">Copyright ©2017, exrick.cn Co., Ltd. All Rights Reserved.本网站设计内容大部分属锤子科技</h4>
                     <ul class="privacy">
