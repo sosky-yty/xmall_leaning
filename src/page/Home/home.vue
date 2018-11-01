@@ -183,190 +183,203 @@ export default {
 }
 </script>
 <style lang="scss" rel="stylesheet/scss" scoped>
-    .home {
-        display:flex;
-        flex-direction: column;
+   .home {
+    display: flex;
+    flex-direction: column;
+  }
+  .w{
+      width: 1220px;
+      margin: 0 auto;
+  }
+
+  .clearfix {
+     *zoom: 1;
+  }
+  .mt30 {
+    margin-top: 30px;
+  }
+
+  .no-info {
+    padding: 100px 0;
+    text-align: center;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    .no-data{
+      align-self: center;
     }
+  }
 
-    .no-info{
-        padding: 100px 0;
-        text-align: center;
-        font-size: 30px;
-        display: flex;
-        flex-direction: column;
-        .no-data{
-            align-self: center;
-        }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+
+  .page {
+    position: absolute;
+    width: 100%;
+    top: 470px;
+    z-index: 30;
+    .dots {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      .dot-active {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        background-color: whitesmoke;
+        border-radius: 8px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      .dot {
+        opacity: 0.2;
+      }
     }
-    .fade-enter-active, .fade-leave-active{
-        transition: opacity .5s;
+  }
+
+  .activity-panel {
+    width: 1220px;
+    margin: 0 auto;
+    .box {
+      overflow: hidden;
+      position: relative;
+      z-index: 0;
+      margin-top: 25px;
+      box-sizing: border-box;
+      border: 1px solid rgba(0,0,0,.14);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 3px 8px -6px rgba(0,0,0,.1);
     }
-
-    .fade-enter , .fade-leave-active-to{
-        opacity: 0;
+    .content {
+      float: left;
+      position: relative;
+      box-sizing: border-box;
+      width: 25%;
+      height: 200px;
+      text-align: center;
     }
-
-    .page{
-        position: absolute;
-        width:100%;
-        top: 470px;
-        z-index: 30;
-        .dots {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            .dot-active{
-                display: inline-block;
-                width: 15px;
-                height: 15px;
-                background-color: whitesmoke;
-                border-radius: 8px;
-                margin-right: 10px;
-                cursor: pointer;
-            }
-            .dot{
-                opacity: 0.2;
-            }
-        }
+    .content ::before{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      box-sizing: border-box;
+      border-left: 1px solid #f2f2f2;
+      border-left: 1px solid rgba(0,0,0,.1);
+      width: 100%;
+      height: 100%;
+      content: "";
+      pointer-events: none;
     }
-
-    .activity-panel{
-        width: 1220px;
-        margin:0 auto;
-        .box{
-            overflow: hidden;
-            position: relative;
-            z-index: 0;
-            margin-top: 25px;
-            box-sizing: border-box;
-            border: 1px solid rgba(0,0,0,.14);
-            border-radius: 8px;
-            background: #ffffff;
-            box-shadow: 0 3px 8px -6px rgba(0,0,0,.1);
-        }
-        .content{
-            float:left;
-            position: relative;
-            box-sizing: border-box;
-            width: 25%;
-            height: 200px;
-            text-align: center;
-        }
-        .content ::before{
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            box-sizing: border-box;
-            border-left: 1px solid #f2f2f2;
-            border-left: 1px solid rgba(0,0,0,.1);
-            width:100%;
-            height: 100%;
-            content: "";
-            pointer-events: none;
-        }
-        .i{
-            width: 305px;
-            height: 200px;
-        }
-        .cover-link{
-            cursor: pointer;
-            display: block;
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            z-index: 4;
-            background: url(data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEHAAEALAAAAAABAAEAAAICTAEAOw==) repeat;
-        }
-        a{
-            color: #5079d9;
-            cursor: pointer;
-            transition: all .15s ease-out;
-            text-decoration: none;
-        }
-
-        a:hover{
-            box-shadow: inset 0 0 38px rgba(0,0,0,.08);
-            transition: all .15s ease;
-        }
+    .i {
+      width: 305px;
+      height: 200px;
     }
-     .banner , .banner span , .banner div{
-            font-family: "Microsoft YaHei";
-            transition: all .3s;
-            transition-timing-function: linear;
-        }
+    .cover-link {
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 4;
+      background: url(data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEHAAEALAAAAAABAAEAAAICTAEAOw==) repeat;
+    }
+    a {
+      color: #5079d9;
+      cursor: pointer;
+      transition: all .15s ease-out;
+      text-decoration: none;
+    }
+    a:hover {
+      box-shadow: inset 0 0 38px rgba(0,0,0,.08);
+      transition: all .15s ease;
+    }
+  }
 
-        .banner{
-            cursor: pointer;
-            perspective: 3000px;
-            position: relative;
-            z-index: 19;
-            margin: 0 auto;
-            width: 1220px;
-        }
+  .banner, .banner span, .banner div {
+    font-family: "Microsoft YaHei";
+    transition: all .3s;
+    transition-timing-function: linear;
+  }
 
-        .bg{
-            position: relative;
-            width: 1220px;
-            height: 500px;
-            margin: 20px auto;
-            background-size: 100% 100%;
-            border-radius: 10px;
-            transform-style: preserve-3d;
-            transform-origin: 50% 50%;
-            transform: rotateY(0deg) rotateX(0deg);
-            & div{
-                position: relative;
-                height:100%;
-                width:100%;
-            }
-        }
+  .banner {
+    cursor: pointer;
+    perspective: 3000px;
+    position: relative;
+    z-index: 19;
+    margin: 0 auto;
+    width: 1220px;
+  }
 
-        .img1{
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            border-radius: 10px;
-        }
+  .bg {
+    position: relative;
+    width: 1220px;
+    height: 500px;
+    margin: 20px auto;
+    background-size: 100% 100%;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50%;
+    transform: rotateY(0deg) rotateX(0deg);
+    & div{
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+  }
 
-        .img2{
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            bottom: 5px;
-            left: 0;
-            background-size: 95% 100%;
-            border-radius: 10px;
-        }
-        .img3{
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            border-radius: 10px;
-        }
+  .img1 {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    border-radius: 10px;
+  }
 
-        .a{
-            z-index: 20;
-            transform: translateZ(40px);
-        }
-        .b{
-            z-index:20px;
-            transform: translateZ(30px);
-        }
+  .img2 {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 5px;
+    left: 0;
+    background-size: 95% 100%;
+    border-radius: 10px;
+  }
 
-        .c{
-            transform: translateZ(0px);
-        }
+  .img3 {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    border-radius: 10px;
+  }
 
-        .sk_item {
+  .a {
+    z-index: 20;
+    transform: translateZ(40px);
+  }
+
+  .b {
+    z-index: 20;
+    transform: translateZ(30px);
+  }
+
+  .c {
+    transform: translateZ(0px);
+  }
+
+  .sk_item {
     width: 170px;
     height: 225px;
     padding: 0 14px 0 15px;
