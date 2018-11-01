@@ -59,17 +59,15 @@
             </div>
         </div>
         <el-dialog
-         title="通知"
-         :visible.sync="dialogVisiable"
-         width="30%"
-         style="width:70%; margin:0 auto">
-        <span>
-            本商城只为本人学习使用
-        </span>
-        <span slot="footer" class="dialog-footer">
-            <el-button type="primary" @click="dialogVisible = false">知道了</el-button>
-        </span>
-        </el-dialog>
+      title="通知"
+      :visible.sync="dialogVisible"
+      width="30%"
+      style="width:70%;margin:0 auto">
+      <span>本商城仅为本人学习使用</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="dialogVisible = false">知道了</el-button>
+      </span>
+    </el-dialog>
     </div>
 </template>
 <script>
