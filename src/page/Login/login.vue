@@ -150,7 +150,7 @@ export default {
     login () {
       this.logintxt = '登录中....'
       this.remmeberPass()
-      if (!this.ruleForm.userName || !this.userPwd) {
+      if (!this.ruleForm.userName || !this.ruleForm.userPwd) {
         this.message('账号或者密码不能为空!')
         return false
       }
