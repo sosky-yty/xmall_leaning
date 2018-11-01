@@ -24,7 +24,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-    @import url("../assets/style/mixin");
+    @import "../assets/style/mixin";
     .item {
     position: relative;
     height: 429px;

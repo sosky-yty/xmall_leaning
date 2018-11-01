@@ -6,6 +6,7 @@
                 <slot name="right"></slot>
             </div>
         </div>
+        <!-- 内容 -->
         <div>
             <slot name="content"></slot>
         </div>

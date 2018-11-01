@@ -24,7 +24,7 @@
 </template>
 <script>
 import YButton from '../components/YButton'
-import {addCart} from '/api/goods.js'
+import {addCart} from '../api/goods.js'
 import {mapMutations, mapState} from 'vuex'
 import {getStore} from '../untils/storage'
 export default {
