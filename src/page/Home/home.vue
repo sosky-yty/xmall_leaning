@@ -23,11 +23,11 @@
             <div v-for="(item,i) in  home" :key="i">
                 <div class="activity-panel" v-if="item.type === 1">
                     <ul class="box">
-                        <li class="content" v-for="(iitem,j) in item.panelContents" :key="j" @click="linkTo(iitem)">
-                            <img class="i" :src="iitem.picUrl">
-                            <a class="cover-link"></a>
-                        </li>
-                    </ul>
+                     <li class="content" v-for="(iitem,j) in item.panelContents" :key="j" @click="linkTo(iitem)">
+                       <img class="i" :src="iitem.picUrl">
+                       <a class="cover-link"></a>
+                     </li>
+                   </ul>
                 </div>
 
                 <section class="w mt30 clearfix" v-if="item.type === 2">
