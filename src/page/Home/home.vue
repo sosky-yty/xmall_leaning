@@ -3,7 +3,7 @@
         <div v-loading="loading" element-loading-text="加载中" style="min-height:35vw;" v-if="!error">
             <div class="banner">
                 <div class="bg" ref="bg"
-                    @mouseover="bgOver($refs.bg)" @mousemove="bgMove($refs.bg.$event)" @mouseout="bgOut($refs.bg)">
+                    @mouseover="bgOver($refs.bg)" @mousemove="bgMove($refs.bg,$event)" @mouseout="bgOut($refs.bg)">
                     <transition name="fade">
                         <div v-for="(item,i) in banner" v-if="i=== mark" :key="i" style="position:absolute" @click="linkTo(item)" @mouseover="stopTimer" @mouseout="startTimer">
                             <img v-if="item.picUrl" class="img1" :src="item.picUrl"/>
@@ -91,7 +91,7 @@ export default {
       home: [],
       loading: true,
       notify: '1',
-      dialogVisiable: false,
+      dialogVisiable: true,
       timer: ''
     }
   },
@@ -109,7 +109,7 @@ export default {
       this.mark = i
     },
     startTimer () {
-      this.setInterval(this.autoPlay, 2500)
+      this.timer = setInterval(this.autoPlay, 2500)
     },
     stopTimer () {
       clearInterval(this.timer)
@@ -137,9 +137,17 @@ export default {
       let X, Y
       let mouseX = eve.pageX - bgOpt.px
       let mouseY = eve.pageY - bgOpt.py
-      X = mouseX - (bgOpt.w / 2)
-      Y = bgOpt.h - mouseY
-      dom.style['transform'] = `rotateY(${X / 50}deg) rotateX(${Y / 50} deg)`
+      if (mouseX > bgOpt.w / 2) {
+        X = mouseX - (bgOpt.w / 2)
+      } else {
+        X = mouseX - (bgOpt.w / 2)
+      }
+      if (mouseY > bgOpt.h / 2) {
+        Y = bgOpt.h / 2 - mouseY
+      } else {
+        Y = bgOpt.h / 2 - mouseY
+      }
+      dom.style['transform'] = `rotateY(${X / 50}deg) rotateX(${Y / 50}deg)`
       dom.style.transform = `rotateY(${X / 50}deg) rotateX(${Y / 50}deg)`
     },
     bgOut (dom) {
