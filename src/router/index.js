@@ -4,6 +4,7 @@ const Index = () => import('../page/index.vue')
 const Login = () => import('../page/Login/login.vue')
 const Register = () => import('../page/Login/register.vue')
 const Home = () => import('../page/Home/home.vue')
+const Cart = () => import('../page/Cart/cart.vue')
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -17,6 +18,7 @@ export default new Router({
       ]
     },
     {path: '/login', name: 'login', component: Login},
-    {path: '/register', name: 'register', component: Register}
+    {path: '/register', name: 'register', component: Register},
+    {path: '/cart', name: 'cart', component: Cart}
   ]
 })
