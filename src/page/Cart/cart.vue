@@ -109,8 +109,8 @@
 import {getCartList, cartEdit, editCheckAll, cartDel, delCartChecked} from '../../api/goods.js'
 import {mapMutations, mapState} from 'vuex'
 import YButton from '../../components/YButton'
-import YHeader from '../../common/footer'
-import YFooter from '../../common/header'
+import YHeader from '../../common/header'
+import YFooter from '../../common/footer'
 import BuyNum from '../../components/buynum'
 import {getStore} from '../../untils/storage'
 export default {
