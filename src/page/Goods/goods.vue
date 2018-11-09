@@ -19,7 +19,7 @@
                     <mall-goods v-for="(item,i) in goods" :key="i" :msg="item"></mall-goods>
                 </div>
 
-                <el-pagination 
+                <el-pagination
                     v-if="!noResult&&!error"
                     @size-change="handleSizeChange"
                     @current-change="handleCurrentChange"
@@ -47,115 +47,115 @@
     </div>
 </template>
 <script>
-    import {getAllGoods} from '/api/goods.js'
-    import {recommend} from '/api/index.js'
-    import mallGoods from '../../components/mallGoods'
-    import YButtom from '../../components/YButton'
-    import YShelf from '../../components/shelf'
+import {getAllGoods} from '../../api/goods'
+import {recommend} from '../../api/index.js'
+import mallGoods from '../../components/mallGoods'
+import YButtom from '../../components/YButton'
+import YShelf from '../../components/shelf'
 export default {
-    data(){
-        return {
-            goods:[],
-            noResult:false,
-            error:false,
-            min:'',
-            max:'',
-            loading:true,
-            timer:null,
-            sortType:1,
-            windowHeight:null,
-            windowWidth:null,
-            recommendPanel:[],
-            sort:'',
-            currentPage:1,
-            total: 0,
-            pageSize:20
-        }
-    },
-    methods:{
-        handleSizeChange(val){
-            this.pageSize = val
-            this._getAllGoods()
-            this.loading = true
-        },
-        handleCurrentChange(val){
-            this.currentPage = val
-            this._getAllGoods()
-            this.loading = true
-        },
-        _getAllGoods(){
-            let cid = this.$route.query,cid
-            if(this.min!== ''){
-                this.min = Math.floor(this.min)
-            }
-            if(this.max !==''){
-                this.max = Math.floor(this.max)
-            }
-            let params = {
-                params:{
-                    page:this.currentPage,
-                    size:this.pageSize,
-                    sort:this.sort,
-                    priceGt:this.min,
-                    priceLte:this.max,
-                    cid:cid
-                }
-            }
-            getAllGoods(params).then(res =>{
-                if(res.success === true){
-                    this.total = res.result.total
-                    this.goods = res.result.data
-                    this.noResult = false
-                    if (this.total === 0){
-                        this.noResult = true
-                    }
-                    this.error = false
-                } else{
-                    this.error = true
-                }
-                this.loading = false
-            })
-        },
-        reset(){
-            this.sortType = 1
-            this.sort = ''
-            this.currentPage = 1
-            this.loading = true
-            this._getAllGoods()
-        },
-        sortByPrice(v){
-            v === 1 ?this.sortType = 2 :this.sortType = 3
-            this.sort = v
-            this.currentPage = 1
-            this.loading = true
-            this._getAllGoods()
-        },
-        watch: {
-            $route (to,from){
-                if(to.fullPath.indexOf('/goods?cid=') >= 0){
-                    this.cId = to.query.cid
-                    this._getAllGoods()
-                }
-            }
-        },
-        created () {
-            
-        },
-        mounted () {
-            this.windowHeight = window.innerHeight
-            this.windowWidth = window.innerWidth
-            this._getAllGoods()
-            recommend().then(res =>{
-                let data = res.result
-                this.recommendPanel = data[0]
-            })
-        },
-        components: {
-            mallGoods,
-            YButtom,
-            YShelf
-        }
+  data () {
+    return {
+      goods: [],
+      noResult: false,
+      error: false,
+      min: '',
+      max: '',
+      loading: true,
+      timer: null,
+      sortType: 1,
+      windowHeight: null,
+      windowWidth: null,
+      recommendPanel: [],
+      sort: '',
+      currentPage: 1,
+      total: 0,
+      pageSize: 20
     }
+  },
+  methods: {
+    handleSizeChange (val) {
+      this.pageSize = val
+      this._getAllGoods()
+      this.loading = true
+    },
+    handleCurrentChange (val) {
+      this.currentPage = val
+      this._getAllGoods()
+      this.loading = true
+    },
+    _getAllGoods () {
+      let cid = this.$route.query.cid
+      if (this.min !== '') {
+        this.min = Math.floor(this.min)
+      }
+      if (this.max !== '') {
+        this.max = Math.floor(this.max)
+      }
+      let params = {
+        params: {
+          page: this.currentPage,
+          size: this.pageSize,
+          sort: this.sort,
+          priceGt: this.min,
+          priceLte: this.max,
+          cid: cid
+        }
+      }
+      getAllGoods(params).then(res => {
+        if (res.success === true) {
+          this.total = res.result.total
+          this.goods = res.result.data
+          this.noResult = false
+          if (this.total === 0) {
+            this.noResult = true
+          }
+          this.error = false
+        } else {
+          this.error = true
+        }
+        this.loading = false
+      })
+    },
+    reset () {
+      this.sortType = 1
+      this.sort = ''
+      this.currentPage = 1
+      this.loading = true
+      this._getAllGoods()
+    },
+    sortByPrice (v) {
+      v === 1 ? this.sortType = 2 : this.sortType = 3
+      this.sort = v
+      this.currentPage = 1
+      this.loading = true
+      this._getAllGoods()
+    },
+    watch: {
+      $route (to, from) {
+        if (to.fullPath.indexOf('/goods?cid=') >= 0) {
+          this.cId = to.query.cid
+          this._getAllGoods()
+        }
+      }
+    },
+    created () {
+
+    },
+    mounted () {
+      this.windowHeight = window.innerHeight
+      this.windowWidth = window.innerWidth
+      this._getAllGoods()
+      recommend().then(res => {
+        let data = res.result
+        this.recommendPanel = data[0]
+      })
+    },
+    components: {
+      mallGoods,
+      YButtom,
+      YShelf
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

@@ -5,6 +5,8 @@ const Login = () => import('../page/Login/login.vue')
 const Register = () => import('../page/Login/register.vue')
 const Home = () => import('../page/Home/home.vue')
 const Cart = () => import('../page/Cart/cart.vue')
+const Goods = () => import('../page/Goods/goods.vue')
+const goodsDetails = () => import('../page/Goods/goodsDetails.vue')
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -14,7 +16,9 @@ export default new Router({
       redirect: '/home',
       component: Index,
       children: [
-        {path: 'home', component: Home}
+        {path: 'home', component: Home},
+        {path: 'goods', component: Goods},
+        {path: 'goodsDetails', name: 'goodsDetails', component: goodsDetails}
       ]
     },
     {path: '/login', name: 'login', component: Login},
