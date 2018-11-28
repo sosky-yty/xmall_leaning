@@ -152,6 +152,7 @@ export default {
       this.remmeberPass()
       if (!this.ruleForm.userName || !this.ruleForm.userPwd) {
         this.message('账号或者密码不能为空!')
+        this.logintxt = '登录'
         return false
       }
       var result = captcha.getValidate()
@@ -168,7 +169,7 @@ export default {
         seccode: result.geetest_seccode,
         statusKey: this.statusKey
       }
-      userLogin(params).then(res => {
+      usrLogin(params).then(res => {
         if (res.result.state === 1) {
           setStore('token', res.result.token)
           setStore('userId', res.result.id)
